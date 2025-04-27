@@ -1,0 +1,16 @@
+main.c:85:5:main	1
+main.c:145:6:SystemClock_Config	4
+main.c:206:13:MX_DFSDM1_Init	2
+main.c:244:13:MX_I2C2_Init	4
+main.c:292:13:MX_QUADSPI_Init	2
+main.c:325:13:MX_SPI3_Init	2
+main.c:365:13:MX_USART1_UART_Init	2
+main.c:400:13:MX_USART3_UART_Init	2
+main.c:435:13:MX_USB_OTG_FS_PCD_Init	2
+main.c:470:13:MX_GPIO_Init	1
+main.c:648:9:hts221_read_register	1
+main.c:654:6:hts221_write_register	1
+main.c:659:10:hts221_read_temp_register	1
+main.c:665:10:hts221_read_humd_register	1
+main.c:671:6:hts221_init	1
+main.c:684:6:Error_Handler	1

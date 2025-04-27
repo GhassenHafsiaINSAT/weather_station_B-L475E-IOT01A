@@ -1,0 +1,99 @@
+18:53:51 **** Incremental Build of configuration Debug for project Smart_Weather_Station ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Smart_Weather_Station.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ghass\Desktop\Smart_Weather_Station\Smart_Weather_Station\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Smart_Weather_Station.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Smart_Weather_Station.elf
+ 
+arm-none-eabi-size   Smart_Weather_Station.elf 
+arm-none-eabi-objdump -h -S  Smart_Weather_Station.elf  > "Smart_Weather_Station.list"
+   text	   data	    bss	    dec	    hex	filename
+  21692	     20	   3484	  25196	   626c	Smart_Weather_Station.elf
+Finished building: default.size.stdout
+ 
+Finished building: Smart_Weather_Station.list
+ 
+18:53:56 **** Incremental Build of configuration Debug for project Smart_Weather_Station ****
+make -j8 all 
+arm-none-eabi-size   Smart_Weather_Station.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21692	     20	   3484	  25196	   626c	Smart_Weather_Station.elf
+Finished building: default.size.stdout
+ 
+18:56:40 **** Incremental Build of configuration Debug for project Smart_Weather_Station ****
+make -j8 all 
+arm-none-eabi-size   Smart_Weather_Station.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21692	     20	   3484	  25196	   626c	Smart_Weather_Station.elf
+Finished building: default.size.stdout
+ 
+18:58:16 **** Incremental Build of configuration Debug for project Smart_Weather_Station ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Smart_Weather_Station.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ghass\Desktop\Smart_Weather_Station\Smart_Weather_Station\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Smart_Weather_Station.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Smart_Weather_Station.elf
+ 
+arm-none-eabi-size   Smart_Weather_Station.elf 
+arm-none-eabi-objdump -h -S  Smart_Weather_Station.elf  > "Smart_Weather_Station.list"
+   text	   data	    bss	    dec	    hex	filename
+  21692	     20	   3484	  25196	   626c	Smart_Weather_Station.elf
+Finished building: default.size.stdout
+ 
+Finished building: Smart_Weather_Station.list
+ 
+19:04:16 **** Incremental Build of configuration Debug for project Smart_Weather_Station ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_hal_msp.d" -MT"Core/Src/stm32l4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+arm-none-eabi-gcc -o "Smart_Weather_Station.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ghass\Desktop\Smart_Weather_Station\Smart_Weather_Station\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Smart_Weather_Station.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Smart_Weather_Station.elf
+ 
+arm-none-eabi-size   Smart_Weather_Station.elf 
+arm-none-eabi-objdump -h -S  Smart_Weather_Station.elf  > "Smart_Weather_Station.list"
+   text	   data	    bss	    dec	    hex	filename
+  21680	     20	   3484	  25184	   6260	Smart_Weather_Station.elf
+Finished building: default.size.stdout
+ 
+Finished building: Smart_Weather_Station.list
+ 
+19:07:20 **** Incremental Build of configuration Debug for project Smart_Weather_Station ****
+make -j8 all 
+arm-none-eabi-size   Smart_Weather_Station.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21680	     20	   3484	  25184	   6260	Smart_Weather_Station.elf
+Finished building: default.size.stdout
+ 
+19:10:49 **** Incremental Build of configuration Debug for project Smart_Weather_Station ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:134:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  134 |   HAL_UART_Transmit(&huart1, "176", 1, 100);
+      |                              ^~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Smart_Weather_Station.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ghass\Desktop\Smart_Weather_Station\Smart_Weather_Station\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Smart_Weather_Station.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Smart_Weather_Station.elf
+ 
+arm-none-eabi-size   Smart_Weather_Station.elf 
+arm-none-eabi-objdump -h -S  Smart_Weather_Station.elf  > "Smart_Weather_Station.list"
+   text	   data	    bss	    dec	    hex	filename
+  21688	     20	   3484	  25192	   6268	Smart_Weather_Station.elf
+Finished building: default.size.stdout
+ 
+Finished building: Smart_Weather_Station.list
+ 
+19:12:41 **** Incremental Build of configuration Debug for project Smart_Weather_Station ****
+make -j8 all 
+arm-none-eabi-size   Smart_Weather_Station.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21688	     20	   3484	  25192	   6268	Smart_Weather_Station.elf
+Finished building: default.size.stdout
+ 

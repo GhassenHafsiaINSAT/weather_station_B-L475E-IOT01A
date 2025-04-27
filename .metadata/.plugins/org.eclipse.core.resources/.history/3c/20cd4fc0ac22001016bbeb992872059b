@@ -1,0 +1,28 @@
+/*
+ * hts221.c
+ *
+ *  Created on: Apr 26, 2025
+ *      Author: ghass
+ */
+#include "hts221.h"
+
+uint8_t hts221_read_register(uint8_t reg){
+	HAL_I2C_Master_Receive(hi2c, DevAddress, pData, Size, Timeout);
+	HAL_I2C_Master_Transmit(hi2c, DevAddress, pData, Size, Timeout);
+}
+uint8_t hts221_read_register(uint8_t reg){
+
+}
+
+uint8_t hts221_read_temp_register(){
+
+}
+
+
+uint8_t hts221_read_humd_register(){
+
+}
+
+void hts221_init(){
+
+}

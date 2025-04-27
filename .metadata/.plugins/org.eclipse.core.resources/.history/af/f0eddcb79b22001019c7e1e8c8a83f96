@@ -1,0 +1,28 @@
+/*
+ * hts221.h
+ *
+ *  Created on: Apr 26, 2025
+ *      Author: ghass
+ */
+
+#ifndef INC_HTS221_H_
+#define INC_HTS221_H_
+
+#define HTS221_IDENTIFIER	0xBC
+#define HTS221_WRITE_ADDR	0xBE
+#define HTS221_READ_ADDR	0xBF
+
+// HTS221 registers
+#define WHO_AM_I_OFFSET				0x0F
+#define AV_CONF_OFFSET				0x10
+#define CTRL_REG1_OFFSET			0x20
+#define CTRL_REG2_OFFSET			0x21
+#define CTRL_REG3_OFFSET			0x22
+#define STATUS_REG_OFFSET			0x27
+#define HUMIDITY_OUT_L_OFFSET		0x28
+#define HUMIDITY_OUT_H_OFFSET		0x29
+#define HUMIDITY_OUT_L_OFFSET		0x2A
+#define HUMIDITY_OUT_H_OFFSET		0x2B
+
+
+#endif /* INC_HTS221_H_ */
