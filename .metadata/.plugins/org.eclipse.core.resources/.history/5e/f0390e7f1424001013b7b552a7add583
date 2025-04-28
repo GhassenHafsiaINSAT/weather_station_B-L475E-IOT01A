@@ -1,0 +1,81 @@
+/*
+ * hts221.c
+ *
+ *  Created on: Apr 26, 2025
+ *      Author: ghass
+ */
+#include "hts221.h"
+
+
+uint8_t hts221_read_register(uint8_t reg){
+	uint8_t value = 0;
+	HAL_I2C_Master_Transmit(&hi2c2, HTS221_SLAVE_ADDR << 1, &reg, 1, 100);
+	HAL_I2C_Master_Receive(&hi2c2, HTS221_SLAVE_ADDR << 1, &value, 1, 100);
+	return value;
+}
+void hts221_write_register(uint8_t reg, uint8_t value){
+	uint8_t data[] = {reg, value};
+	HAL_I2C_Master_Transmit(&hi2c2, HTS221_SLAVE_ADDR << 1, data, 2, 100);
+}
+
+uint16_t hts221_read_temp_register(){
+	uint8_t temp_high = hts221_read_register(TEMP_OUT_H_OFFSET);
+	uint8_t temp_low = hts221_read_register(TEMP_OUT_L_OFFSET);
+	return 	(((uint16_t)temp_high << 8 )| temp_low);
+}
+
+uint16_t hts221_read_humd_register(){
+	uint8_t humd_high = hts221_read_register(HUMIDITY_OUT_H_OFFSET);
+	uint8_t humd_low = hts221_read_register(HUMIDITY_OUT_L_OFFSET);
+	return (( (uint16_t)humd_high << 8 )| humd_low);
+}
+
+
+void hts221_init(){
+	hts221_write_register(CTRL_REG1_OFFSET, 0x85);
+
+	hts221_write_register(CTRL_REG2_OFFSET, 0x00);
+
+	hts221_write_register(CTRL_REG3_OFFSET, 0x00);
+}
+
+uint8_t converted_humd(uint16_t adc_read){
+
+	uint8_t h0_t0_out_0 = hts221_read_register(H0_T0_OUT_0_OFFSET);
+	uint8_t h0_t0_out_1 = hts221_read_register(H0_T0_OUT_1_OFFSET);
+	uint16_t h0_t0_out = h0_t0_out_1 << 8 | h0_t0_out_0;
+
+	uint8_t h1_t0_out_0 = hts221_read_register(H1_T0_OUT_0_OFFSET);
+	uint8_t h1_t0_out_1 = hts221_read_register(H1_T0_OUT_1_OFFSET);
+	uint16_t h1_t0_out = h1_t0_out_1 << 8 | h1_t0_out_0;
+
+
+	uint8_t H1_rH = hts221_read_register(H0_RH_X2_OFFSET);
+	uint8_t H0_rH = hts221_read_register(H1_RH_X2_OFFSET);
+
+	uint16_t humidity_temp = (adc_read - h0_t0_out) * (uint16_t)(H1_rH - H0_rH);
+	humidity_temp = humidity_temp / (h1_t0_out - h0_t0_out);
+	humidity_temp = humidity_temp + (uint16_t)H0_rH;
+
+	return (uint8_t)(humidity_temp / 2);
+
+}
+
+uint8_t converted_temp(uint16_t adc_read){
+	    uint8_t t0_out_0 = hts221_read_register(T0_OUT_0_OFFSET);
+	    uint8_t t0_out_1 = hts221_read_register(T0_OUT_1_OFFSET);
+	    uint16_t t0_out = t0_out_1 << 8 | t0_out_0;
+
+	    uint8_t t1_out_0 = hts221_read_register(T1_OUT_0_OFFSET);
+	    uint8_t t1_out_1 = hts221_read_register(T1_OUT_1_OFFSET);
+	    uint16_t t1_out = t1_out_1 << 8 | t1_out_0;
+
+		uint8_t t0_degC = hts221_read_register(T0_DEGC_X8_OFFSET);
+		uint8_t t1_degC = hts221_read_register(T1_DEGC_X8_OFFSET);
+
+	    uint32_t temp_temp = (uint32_t)(adc_read - t0_out) * (uint32_t)(t1_degC - t0_degC);
+	    temp_temp = temp_temp / (t1_out - t0_out);
+	    temp_temp = temp_temp + (uint32_t)t0_degC;
+
+	    return (uint8_t)(temp_temp / 8);
+	}

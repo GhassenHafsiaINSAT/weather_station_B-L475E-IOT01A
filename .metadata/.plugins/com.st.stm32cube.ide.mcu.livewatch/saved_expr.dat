@@ -1,3 +1,4 @@
 raw_humidity
 raw_temperature
-raw_data
+converted_temp_
+converted_humd_
