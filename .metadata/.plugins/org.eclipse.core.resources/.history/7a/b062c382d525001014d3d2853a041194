@@ -1,0 +1,45 @@
+/*
+ * at_commands.h
+ *
+ *  Created on: Apr 28, 2025
+ *      Author: ghass
+ */
+
+#ifndef INC_AT_COMMANDS_H_
+#define INC_AT_COMMANDS_H_
+
+#include <string.h>
+#include <stdio.h>
+
+// AT Command Macros
+// Configuring the WI-FI
+#define AT_CMD_C1_SET_PASSPHRASE    		"C2=%s\r\n"			// Set the pass-phrase
+#define AT_CMD_C2_SET_SSID  				"C1=%s\r\n"			// Set the SSID
+#define AT_CMD_C3_SECURITY_MODE  			"C3=3\r\n"			// AES security
+#define AT_CMD_C4_DHCP           			"C4=1\r\n"			// Enable DHCP
+#define AT_CMD_C0_JOIN_NET          		"C0\r\n"			// join the Network
+#define AT_CMD_CC_CONNECT_AUT				"CC=1\r\n"			// connect automatically on power up
+#define AT_CMD_Z1_SAVE_CONFIG				"Z1\r\n"			//Save changes to flash
+#define AT_CMD_CD_DISONNECT					"CD\r\n"			// Disconnect from network
+
+#define AT_CMD_P0_SELECT_SOCKET  			"P0=%d\r\n"				// Select the socket
+#define AT_CMD_P1_PROTOCOL     				"P1=4\r\n" 				// TCP protocol
+#define AT_CMD_P3_HOST_IP      				"P3=%s\r\n"				// Set the host IP address
+#define AT_CMD_P4_SERVER_PORT    			"P4=%d\r\n"    			// Default MQTT port
+#define AT_CMD_P6_START_TCP_CLIENT   		"P6=1\r\n"       		// Start MQTT client
+
+#define AT_CMD_PAYLOAD_SIZE   				"R1=1200\r\n"
+#define AT_CMD_TIMEOUT      				"R2=5000\r\n"
+
+// Function Prototypes
+
+void send_at_cmd(const char* cmd);
+
+void wifi_init(const char* ssid, const char* passphrase);
+void wifi_save_settings(void);
+
+void tcp_init(const char* ip, int socket_id);
+
+void wifi_disconnect(void);
+
+#endif /* INC_AT_COMMANDS_H_ */
