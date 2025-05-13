@@ -3,4 +3,15 @@
 	<section name="ExternalProjectImportWizard">
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
 	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\ghass\STM32Cube\Repository\STM32Cube_FW_L4_V1.17.2\Projects\B-L475E-IOT01A\Applications\WiFi\WiFi_Client_Server\SW4STM32\B-L475E-IOT01"/>
+			<item value="C:\Users\ghass\STM32Cube\Repository\STM32Cube_FW_L4_V1.17.2\Projects\B-L475E-IOT01A\Applications\WiFi\WiFi_HTTP_Server\SW4STM32"/>
+			<item value="C:\Users\ghass\STM32Cube\Repository\STM32Cube_FW_L4_V1.17.2\Projects\B-L475E-IOT01A\Applications\WiFi\WiFi_HTTP_Server"/>
+		</list>
+	</section>
 </section>

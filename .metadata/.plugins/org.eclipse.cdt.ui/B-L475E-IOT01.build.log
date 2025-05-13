@@ -1,0 +1,10 @@
+10:43:33 **** Incremental Build of configuration Debug for project B-L475E-IOT01 ****
+make -j8 all 
+arm-none-eabi-size   B-L475E-IOT01.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23440	    152	  97408	 121000	  1d8a8	B-L475E-IOT01.elf
+Finished building: default.size.stdout
+ 
+
+10:43:34 Build Finished. 0 errors, 0 warnings. (took 298ms)
+
